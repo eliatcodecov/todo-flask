@@ -10,6 +10,10 @@ COPY requirements.txt .
 # Install the required packages
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install Sentry SDK
+RUN pip install --upgrade 'sentry-sdk[flask]'
+
+
 # Copy the application code and static files into the container
 COPY app.py index.html app.js ./
 
